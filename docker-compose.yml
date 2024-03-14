@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    command: rails server -b 0.0.0.0
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    depends_on:
+      - cache
+    environment:
+      - REDIS_URL=redis://cache:6379/0
+
+  sidekiq:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    command: bundle exec sidekiq
+    volumes:
+      - .:/app
+    depends_on:
+      - cache
+    environment:
+      - REDIS_URL=redis://cache:6379/0
+
+  cache:
+    image: redis:7.2-alpine
+    restart: always
+
+   

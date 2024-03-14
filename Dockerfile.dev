@@ -1,0 +1,16 @@
+# Use the barebones version of Ruby 3.1.4.
+ARG RUBY_VERSION=3.1.4
+FROM ruby:$RUBY_VERSION
+
+# Set the environment variable to ensure that the ruby output is not buffered.
+ENV INSTALL_PATH /app
+RUN mkdir -p $INSTALL_PATH
+
+# Set the working directory in the Docker image to the new directory.
+WORKDIR $INSTALL_PATH
+
+COPY . .
+RUN bundle install
+
+RUN rails db:migrate
+RUN rails db:seed

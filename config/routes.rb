@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/movies/new_import_movies', to: 'movies#new_import_movies'
+  get '/movies/import_movies', to: 'movies#import_movies'
+  post '/movies/import_movies', to: 'movies#import_movies'
+  
   root 'sessions#new'
 end
+
