@@ -25,10 +25,11 @@ Este projeto é uma aplicação para avaliação de filmes e foi desenvolvida ut
 Aqui você encontrará o passo a passo para instalar o projeto corretamente localmente
 
 #### Requisitos:
-
+**1. Caso utilize Docker**
 - docker 
 - docker-compose
-  ou
+  
+**2. Sem o Docker**
 - ruby-3.1.4
 - sqlite3
 - redis 7.7
@@ -70,11 +71,11 @@ $ docker compose up
 ```
 
 - Para iniciar o servidor Rails:
-  ```sh
+```sh
 $ rails server
 ```
 
 - Para executar o Sidekiq:
-  ```sh
+```sh
 $ bundle exec sidekiq
 ```
