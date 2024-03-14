@@ -19,14 +19,23 @@ Este projeto é uma aplicação para avaliação de filmes e foi desenvolvida ut
     - [ ] Criar testes para as rotas da API e models da aplicação
        -  Recomendamos usar o Rspec para os testes, mas você pode escolher outra solução
 
+---------------------------------
+### Tutorial para rodar o projeto
+
+Aqui você encontrará o passo a passo para instalar o projeto corretamente localmente
+
 #### Requisitos:
 
-
+- docker 
+- docker-compose
+  ou
 - ruby-3.1.4
 - sqlite3
-- Docker
-
+- redis 7.7
+---------------------------------
 ### Instalação:
+
+#### 1. Github
 
 Para instalar o projeto você precisa clonar o repositório na branch main. 
 
@@ -41,9 +50,31 @@ or using ssh:
 ```sh
 $ git clone git@github.com:julianansantos/movie-rater.git
 ```
-#### Para rodar a aplicação:
+#### 2. Executando com o Docker
+Para rodar a aplicação:
 
 1. Rode o comando: 
 ```sh
 $ docker compose up
+```
+
+#### 3. Executando sem o Docker
+   - Instale as dependências do projeto:
+```sh
+  bundle install
+```
+  - Para configurar o banco de dados: 
+```sh
+  rails db:migrate
+  rails db:seed
+```
+
+- Para iniciar o servidor Rails:
+  ```sh
+$ rails server
+```
+
+- Para executar o Sidekiq:
+  ```sh
+$ bundle exec sidekiq
 ```
