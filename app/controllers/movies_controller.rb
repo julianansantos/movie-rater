@@ -40,6 +40,26 @@ class MoviesController < ApplicationController
       Rails.logger.error("Error occurred while scheduling import: #{e.message}")
       redirect_to movies_new_import_movies_path, notice: "Error occurred while scheduling import: #{e.message}"
     end
+  
+  def new_import_scores; end
+
+  def import_scores
+     return redirect_to movies_new_import_scores_path, notice: "No file uploaded." unless params[:file].present?
+   
+     file_path = FileService.save_temporary_file(params[:file])
+   
+     if file_path.present?
+       Rails.logger.info("Importing scores from file: #{file_path}")
+       ImportScoreJob.perform_async(file_path, session[:user_id])
+       Rails.logger.info("Job enqueued.")
+       redirect_to movies_new_import_scores_path, notice: "Scores import has been scheduled."
+     else
+       redirect_to movies_new_import_scores_path, notice: "No file uploaded."
+     end
+   rescue StandardError => e
+     Rails.logger.error("Error occurred while scheduling import: #{e.message}")
+     redirect_to movies_new_import_scores_path, notice: "Error occurred while scheduling import: #{e.message}"
+   end
 
   private
 

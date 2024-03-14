@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   get '/movies/new_import_movies', to: 'movies#new_import_movies'
   get '/movies/import_movies', to: 'movies#import_movies'
   post '/movies/import_movies', to: 'movies#import_movies'
+
+  post '/movies/import_scores', to: 'movies#import_scores'
+  get '/movies/import_scores', to: 'movies#import_scores'
+  get '/movies/new_import_scores', to: 'movies#new_import_scores'
   
   root 'sessions#new'
 end
