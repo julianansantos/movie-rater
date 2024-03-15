@@ -60,22 +60,22 @@ $ docker compose up
 ```
 
 #### 3. Executando sem o Docker
-    Instale as dependências do projeto:
+Instale as dependências do projeto:
 ```sh
   bundle install
 ```
-   Para configurar o banco de dados: 
+Para configurar o banco de dados: 
 ```sh
   rails db:migrate
   rails db:seed
 ```
 
- Para iniciar o servidor Rails:
+Para iniciar o servidor Rails:
 ```sh
 $ rails server
 ```
 
- Para executar o Sidekiq:
+Para executar o Sidekiq:
 ```sh
 $ bundle exec sidekiq
 ```
