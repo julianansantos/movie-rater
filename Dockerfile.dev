@@ -12,5 +12,8 @@ WORKDIR $INSTALL_PATH
 COPY . .
 RUN bundle install
 
+RUN rails db:create
 RUN rails db:migrate
 RUN rails db:seed
+
+CMD ["./bin/rails", "server"]
