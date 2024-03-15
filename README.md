@@ -52,7 +52,9 @@ or using ssh:
 $ git clone git@github.com:julianansantos/movie-rater.git
 ```
 #### 2. Executando com o Docker
-Para rodar a aplicação execute o comando:
+Para rodar a aplicação:
+
+1. Rode o comando: 
 ```sh
 $ docker compose up
 ```
