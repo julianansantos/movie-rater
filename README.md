@@ -22,7 +22,7 @@ Este projeto é uma aplicação para avaliação de filmes e foi desenvolvida ut
 ---------------------------------
 ### Tutorial para rodar o projeto
 
-Aqui você encontrará o passo a passo para instalar o projeto corretamente localmente
+Aqui você encontrará o passo a passo para instalar o projeto corretamente em sua máquina local.
 
 #### Requisitos:
 **1. Caso utilize Docker**
@@ -38,7 +38,7 @@ Aqui você encontrará o passo a passo para instalar o projeto corretamente loca
 
 #### 1. Github
 
-Para instalar o projeto você precisa clonar o repositório na branch main. 
+Para instalar o projeto você precisa clonar o repositório na branch main 
 
 Using https:
 
